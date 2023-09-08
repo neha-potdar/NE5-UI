@@ -5,14 +5,14 @@
 .nav-tabs,.nav-pills {
   > li {
       > a {
-          color: $gray-600;
+          color:$primary;
       }
   }
 }
 
 .nav-pills {
   > a {
-      color: $gray-600;  
+      color: white(#fff);  
   }
 }
 
@@ -32,7 +32,7 @@
     }
 
     .nav-link{
-      background-color: $gray-300;
+      background-color: blue($color:#283d92);
       &.active{
         color: $primary;
         &:after{
@@ -42,7 +42,7 @@
 
       &:after {
         content: "";
-        background: $primary;
+        background:blue($color:#283d92);
         height: 2px;
         position: absolute;
         width: 100%;

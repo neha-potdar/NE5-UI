@@ -1,102 +1,17 @@
-<html>
-  <head>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-   <link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'> 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-  <style>
-body, html{
-     height: 100%;
- 	background-repeat: no-repeat;
- 	background-color: #d3d3d3;
- 	font-family: 'Lato', Verdana;
-}
-
-select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-.main{
- 	margin-top: 70px;
-}
-.form-group{
-	margin-bottom: 15px;
-}
-
-
-
-input,
-input::-webkit-input-placeholder {
-    font-size: 11px;
-    padding-top: 3px;
-}
-
-.main-login{
- 	background-color: #E1FFE1;
-    /* shadows and rounded borders */
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-
-}
-
-label{
-	margin-bottom: 15px;
-    font-size:18px;
-}
-.main-center{
- 	margin-top: 30px;
- 	margin: 0 auto;
- 	max-width: 330px;
-    padding: 10px 10px;
-
-}
-
-.login-button{
-	margin-top: 5px;
-}
-
-.login-register{
-	font-size: 12px;
-	text-align: center;
-    text-decoration:underline;
-    color:#5CB85C;
-    font-weight:bold;
-}
-.iconbk{
-    background-color:#5CB85C;
-}
-  </style>
-    
-  </head>
-  <body>
-
-
 <%- contentFor('HeaderCss') %>
 
 <%- contentFor('breadcrumb') %>
 
 <!-- start page title -->
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-12">
         <div class="page-title-box d-flex align-items-center justify-content-between">
-            <h4 class="page-title mb-0 font-size-18">Inbox</h4>
+            <h4 class="page-title mb-0 font-size-18">Create Virtual Bank Account</h4>
 
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">Email</a></li>
-                    <li class="breadcrumb-item active">Inbox</li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Accounts & Payments</a></li>
+                    <li class="breadcrumb-item active">Create Virtual Bank Account</li>
                 </ol>
             </div>
 
@@ -107,247 +22,280 @@ label{
 
 <%- contentFor('body') %>
 
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create Virtual Bank Account</h4>
+               
 
+                <form id="form-horizontal" class="form-horizontal form-wizard-wrapper">
+                    <h3>Account Details</h3>
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtFirstNameBilling"
+                                        class="col-lg-3 col-form-label">Name</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtFirstNameBilling" name="txtFirstNameBilling"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtLastNameBilling"
+                                        class="col-lg-3 col-form-label">Email</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtLastNameBilling" name="txtLastNameBilling"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtCompanyBilling"
+                                        class="col-lg-3 col-form-label">PAN</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtCompanyBilling" name="txtCompanyBilling"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtEmailAddressBilling"
+                                        class="col-lg-3 col-form-label">Mobile</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtEmailAddressBilling" name="txtEmailAddressBilling"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtAddress1Billing"
+                                        class="col-lg-3 col-form-label">Address </label>
+                                    <div class="col-lg-9">
+                                        <textarea id="txtAddress1Billing" name="txtAddress1Billing"
+                                            rows="4" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                    </fieldset>
+                    <h3>Company Document</h3>
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtFirstNameShipping"
+                                        class="col-lg-3 col-form-label">KYC Verified</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtFirstNameShipping" name="txtFirstNameShipping"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtLastNameShipping"
+                                        class="col-lg-3 col-form-label">KYC Check Decentro</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtLastNameShipping" name="txtLastNameShipping"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtCompanyShipping" class="col-lg-3 col-form-label">Min Balance</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtCompanyShipping" name="txtCompanyShipping"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtEmailAddressShipping"
+                                        class="col-lg-3 col-form-label">Transaction Limit</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtEmailAddressShipping"
+                                            name="txtEmailAddressShipping" type="text"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-</div>
-<!-- End row -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtCityShipping" class="col-lg-3 col-form-label">Customer ID</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtCityShipping" name="txtCityShipping" type="text"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtStateProvinceShipping"
+                                        class="col-lg-3 col-form-label">UPI Onboarding</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtStateProvinceShipping"
+                                            name="txtStateProvinceShipping" type="text"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-<!-- Modal -->
+                    </fieldset>
+                    <h3>Other Details</h3>
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtNameCard" class="col-lg-3 col-form-label">State Code</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtNameCard" name="txtNameCard" type="text"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="ddlCreditCardType"
+                                        class="col-lg-3 col-form-label">City</label>
+                                    <div class="col-lg-9">
+                                        <select id="ddlCreditCardType" name="ddlCreditCardType"
+                                            class="form-select">
+                                            <option value="">--Please Select--</option>
+                                            <option value="AE">American Express</option>
+                                            <option value="VI">Visa</option>
+                                            <option value="MC">MasterCard</option>
+                                            <option value="DI">Discover</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtCreditCardNumber"
+                                        class="col-lg-3 col-form-label">Custom VPA</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtCreditCardNumber" name="txtCreditCardNumber"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtCardVerificationNumber"
+                                        class="col-lg-3 col-form-label">Pincode</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtCardVerificationNumber"
+                                            name="txtCardVerificationNumber" type="text"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtExpirationDate"
+                                        class="col-lg-3 col-form-label">Merchant Category Code</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtExpirationDate" name="txtExpirationDate"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtExpirationDate"
+                                        class="col-lg-3 col-form-label">Merchant Business Type</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtExpirationDate" name="txtExpirationDate"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtExpirationDate"
+                                        class="col-lg-3 col-form-label">Transaction Count Limit Per Day</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtExpirationDate" name="txtExpirationDate"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtExpirationDate"
+                                        class="col-lg-3 col-form-label">Transaction Amount Limit Per Day</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtExpirationDate" name="txtExpirationDate"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtExpirationDate"
+                                        class="col-lg-3 col-form-label">Transaction Amount Limit Per Transaction</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtExpirationDate" name="txtExpirationDate"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <h3>Confirm Detail</h3>
+                    <fieldset>
+                        <div class="p-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="flexCheckDefault1">
+                                <label class="form-check-label" for="flexCheckDefault1">I agree with
+                                    the Terms and Conditions.</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
 
-<!-- ./Transactions/transactions.ejs -->
-<!-- ./Transactions/transactions.ejs -->
-<!-- ./Transactions/transactions.ejs -->
-<!-- ./Transactions/transactions.ejs -->
-<!-- ./Transactions/transactions.ejs -->
-<!-- ./Transactions/transactions.ejs -->
-
-<div class="container" style="margin-left:20px;">
-    <div class="row main" >
-        <div class="panel-heading">
-           <div class="panel-title text-center">
-                   <h1 class="title">Create Virtual Bank Account</h1>
-                   <hr />
-               </div>
-        </div> 
-        <div class="row" style="border:1px double blue;">
-        <div class="main-login main-center">
-            <form class="form-horizontal" method="POST" action="/create-acc">
-                
-                <div class="form-group">
-                    <label for="name" class="cols-sm-2 control-label">Name:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name here"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="pan" class="cols-sm-2 control-label">PAN:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="pan" id="pan"  placeholder="Enter your PAN here"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="email" class="cols-sm-2 control-label">Email:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input type="email" class="form-control" name="email" id="email"  placeholder="Desired Username"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="mobile" class="cols-sm-2 control-label">Mobile:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <input type="tel" class="form-control" name="mobille" id="mobile"  placeholder="Enter Mobile:"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="address" class="cols-sm-2 control-label">Address:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <textarea class="form-control" name="address" id="address"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="kyc" class="cols-sm-2 control-label">KYC Verified:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="kyc" id="kyc"  placeholder="0 or 1"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="decentro" class="cols-sm-2 control-label">KYC Check Decentro:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="decentro" id="decentro"  placeholder="0 or 1"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="minbal" class="cols-sm-2 control-label">Min Balance:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="minbal" id="minbal"  placeholder="Enter min balance"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="trlimit" class="cols-sm-2 control-label">Transaction Limit:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="trlimit" id="trlimit"  placeholder="Transaction Limit:"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="cid" class="cols-sm-2 control-label">Customer Id:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="cid" id="cid"  placeholder="Customer Id"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="upi">UPI Onboarding:</label>
-                    <select id="upi" name="upi">
-                        <option value="true">True</option>
-                        <option value="false">False</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="state" class="cols-sm-2 control-label">State Code:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="state" id="state"  placeholder="State Code:"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="city" class="cols-sm-2 control-label">City:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="city" id="city"  placeholder="City"/>
-                        </div>
-                    </div>
-                </div>
-              
-                <div class="form-group">
-                    <label for="custom" class="cols-sm-2 control-label">Custom VPA:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="custom" id="custom"  placeholder="Custom VPA"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="pincode" class="cols-sm-2 control-label">Pincode:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="pincode" id="pincode"  placeholder="Pincode"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="merchant" class="cols-sm-2 control-label">Merchant Category Code:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="merchant" id="merchant"  placeholder="Merchant Category Code"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="business" class="cols-sm-2 control-label">Merchant Business Type:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="business" id="business"  placeholder="Merchant Business Type"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="count" class="cols-sm-2 control-label">Transaction Count Limit Per Day:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="count" id="count"  placeholder="Transaction Count Limit Per Day"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="amount" class="cols-sm-2 control-label">Transaction Amount Limit Per Day:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="amount" id="amount"  placeholder="Transaction Amount Limit Per Day"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="limit" class="cols-sm-2 control-label">Transaction Amount Limit Per Transaction:</label>
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <span class="input-group-addon iconbk"><i class="fa fa-lock fa-lg " aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="limit" id="limit"  placeholder="Transaction Amount Limit Per Transaction"/>
-                        </div>
-                    </div>
-                </div>
-                
-
-                <div class="main-login main-center">
-                    
-                    </div>
-
-                <div class="form-group ">
-                    <button type="submit" class="btn btn-success btn-lg btn-block login-button" >Create Account</button>
-                </div>
-                <div class="login-register">
-                    <a href=" ">Already have an account?</a>
-                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
-
-
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
- 
-  <!-- Bootstrap and jQuery scripts -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+<!-- end row -->
 
 <%- contentFor('FooterJs') %>
 
-<!--tinymce js-->
-<script src="public/assets/libs/tinymce/tinymce.min.js"></script>
-
-<!-- email editor init -->
-<script src="public/assets/js/pages/email-editor.init.js"></script>
+<!-- form wizard -->
+<script src="public/assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
+<!-- form wizard init -->
+<script src="public/assets/js/pages/form-wizard.init.js"></script>
 
 <%- contentFor('BottomJs') %>
-</body>
-</html>

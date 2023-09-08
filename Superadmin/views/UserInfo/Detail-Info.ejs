@@ -1,253 +1,3 @@
-<html>
-  <head>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <link
-      rel="stylesheet"
-      href=
-"https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"/>
-    <script src=
-"https://code.jquery.com/jquery-3.6.0.slim.js">
-    </script>
-    <script
-      src=
-"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-      crossorigin="anonymous">
-    </script>
-    <script src=
-"https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js">
-    </script>
-    <script src=
-"https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js">
-    </script>
-    <script>
-
-function showQRCode(qrCodeData) {
-        // Use your QR code generation logic here
-        // For example, you can use a third-party library like QRCode.js
-        // to generate the QR code image from the qrCodeData.
-
-        // For this example, we'll just set the QR code data as the src of the image.
-        const qrOutput=document.getElementById("QR-output")
-        const qrImageElement = document.getElementById('qrImage');
-        const hiddenQRCodeData = document.getElementById('hiddenQRCodeData').value;
-         console.log(hiddenQRCodeData)
-        qrImageElement.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=` + encodeURIComponent(hiddenQRCodeData);
-       qrOutput.classList.add("show-image")
-      }
-
-    // Open the modal when clicking on the "Show QR Code" button
-    $('.bs-example-modal-sm').on('shown.bs.modal', function (e) {
-        showQRCode();
-    });
-        
-      $(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-      });
-
-      function sendData() {
-            let filter = document.getElementById('searchField').value.toLowerCase();
-            let myTable = document.getElementById('myTable');
-            let tr = myTable.getElementsByTagName('tr');
-
-            for (let i = 0; i < tr.length; i++) {
-              let tds = tr[i].getElementsByTagName('td');
-              let foundMatch = false;
-
-              for (let j = 0; j < tds.length; j++) {
-                let td = tds[j];
-                if (td) {
-                  let textValue = td.textContent || td.innerHTML;
-                  if (textValue.toLowerCase().indexOf(filter) > -1) {
-                    foundMatch = true;
-                    break;
-                  }
-                }
-              }
-
-              if (foundMatch) {
-                tr[i].style.display = "";
-              } else {
-                tr[i].style.display = "none";
-              }
-            }
-        }
-
-
-
-       // Your other JavaScript code if any
-
-// Function to show the modal
-function showModal() {
-    $('#myModal').css('display', 'block');
-}
-
-// Function to hide the modal
-function hideModal() {
-    $('#myModal').css('display', 'none');
-}
-
-// Function to call the /qr API and display the QR code in the modal
-function showQRCode(qrCodeData) {
-    $('#qrImage').attr('src', qrCodeData);
-    showModal();
-}
-
-// Open the modal when clicking on the "View QR Code" button
-$(document).on('click', '.view-qr-button', function() {
-    var upiQrCode = $(this).data('upi-qrcode');
-    $.ajax({
-        url: '/qr',
-        method: 'POST',
-        data: { upiQrCode: upiQrCode },
-        dataType: 'json',
-        success: function(data) {
-            showQRCode(data.qr_code);
-        },
-        error: function() {
-            alert('Failed to fetch QR code data.');
-        }
-    });
-});
-
-// Close the modal when clicking on the close button (x)
-$('.close').click(function() {
-    hideModal();
-});
-
-// Close the modal when clicking outside the modal content
-$(window).click(function(event) {
-    if (event.target == $('#myModal')[0]) {
-        hideModal();
-    }
-});
-  const QRElement = document.getElementById('QR-output')
-  new QRCode(QRElement,'Hello')
-    </script>
-  <style>
-
-    .container1{
-      width:400px;
-      padding:25px 35px;
-      position: absolute;
-      top:20%;
-      left:50%;
-      transform:translate(-50%-50%);
-      background: #fff;
-      border-radius: 10px;
-    }
-    #imgBox{
-      width:200px;
-      max-height: 0;
-      overflow:hidden;
-      transition: max-height 1s;
-    }
-#imgBox img{
-  width:100%;
-  padding: 10px;
-
-}
-#imgBox.show-img{
-  max-height: 300px;
-  margin:100px 0;
-  border: 1px solid #d1d1d1;
-}
-.error{
-  animation: shake 0.1s linear 10;
-}
-@keyframes shack{
-  0%{
-    transform: translateX(0);
-  }
-  25%{
-    transform: translateX(-2px);
-  }
-  50%{
-    transform: translateX(0);
-  }
-  75%{
-    transform: translateX(2px);
-  }
-  100%{
-    transform: translateX(0);
-  }
-}
-     .mycard {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        width: 40px;
-        height: 40px;
-        background-color: red; /* change the color whatever your want*/
-        border-radius: 15px;
-        text-align: center;
-        }
-        
-        .mycard-content{
-          width: 50px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          margin: 3rem auto 2rem;
-          padding: 1rem 1rem 1.5rem;
-          background-color: green; /* change the color whatever you want */
-          border-radius: 20px;
-        }
-    .card-columns-container {
-    column-count: 2;
-  }
-
-  .card-item {
-    break-inside: avoid-column;
-  }
-    .hidden {
-      display: none;
-    }
-    .staging-card {
-        background-color: #f8f9fa;
-        transition: background-color 0.3s;
-    }
-
-    .staging-card:hover {
-        background-color: #e9ecef;
-    }
-
-    .production-card {
-        background-color: #fff;
-        transition: background-color 0.3s;
-    }
-
-    .production-card:hover {
-        background-color: #f8f9fa;
-    }
-    th{
-        font-family: Poppins;
-        background-color: royalblue;
-    }
-  </style>
-    
-  </head>
-  <body>
-    <div class="card">
-        <div class="card-body">
-          <h4 class="card-title mb-4">Search Users</h4>
-          <form id="search-form" class="mb-4">
-            <div class="input-group">
-              <input type="text" name="searchKeyword" id="searchField" class="form-control" placeholder="Search..." onkeyup="sendData()">
-              <div class="input-group-append">
-                <button type="submit" class="btn btn-primary">Search</button>
-              </div>
-            </div>
-          </form>
-        </div>
-       
-         
-            
-
-
 <%- contentFor('HeaderCss') %>
 
 <%- contentFor('breadcrumb') %>
@@ -256,12 +6,13 @@ $(window).click(function(event) {
 <div class="row">
     <div class="col-12">
         <div class="page-title-box d-flex align-items-center justify-content-between">
-            <h4 class="page-title mb-0 font-size-18">Inbox</h4>
+            <h4 class="page-title mb-0 font-size-18">Profile</h4>
 
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">Email</a></li>
-                    <li class="breadcrumb-item active">Inbox</li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Accounts & Payments</a></li>
+                    <li class="breadcrumb-item active">Profile</li>
+                    
                 </ol>
             </div>
 
@@ -272,176 +23,104 @@ $(window).click(function(event) {
 
 <%- contentFor('body') %>
 
+<!-- start row -->
+<div class="row">
+    <div class="col-md-12 col-xl-3">
+       
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title mb-3">Personal Information</h5>
+              <img src="./public/assets/images/profile-circle-icon.png" height="50px">
+                <p class="card-title-desc">
+                  <% accounts.forEach(function(account) { %>
+                    <h5 class="card-title" style="font-weight: bold;">Customer ID: <%= account.customer_id || '-' %></h5>
+                    <b></b>
+                    <b></b>
+                    <b></b> 
+                             </p>
+                            
 
-</div>
-<!-- End row -->
+                <div class="mt-3">
+                    <p class="font-size-12 text-muted mb-1">PAN No:</p>
+                    <h6 class=""> <%= account.pan_number || '-' %></h6>
+                </div>
 
-<!-- Modal -->
+                <div class="mt-3">
+                    <p class="font-size-12 text-muted mb-1">Mobile No:</p>
+                    <h6 class=""> <%= account.mobile_no || '-' %></h6>
+                </div>
 
-<!-- ./Transactions/transactions.ejs -->
-<!-- ./Transactions/transactions.ejs -->
-<!-- ./Transactions/transactions.ejs -->
-<!-- ./Transactions/transactions.ejs -->
-<!-- ./Transactions/transactions.ejs -->
-<!-- ./Transactions/transactions.ejs -->
+                <div class="mt-3">
+                    <p class="font-size-12 text-muted mb-1">Bank:</p>
+                    <h6 class=""><%= account.bank || '-' %></h6>
+                </div>
+                <% }); %>
+            </div>
+        </div>
 
+        
 
+    </div>
 
+    <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                              <h5 class="card-title mb-3">Transaction Details</h5>
+                                <% accounts.forEach(function(account) { %>
+                                  <p class="card-text"><b>Transaction ID:</b> <%= account.decentroTxnId || '-' %></p>
+                                  <p class="card-text"><b>UPI Onboarding Status:</b> <%= account.upiOnboardingStatus || '-' %></p>
+                                  <p class="card-text"><b>Merchant Category Code: </b><%= account.merchantCategoryCode || '-' %></p>
+                                  <p class="card-text"><b>Transaction Amount / Day Limit:</b> <%= account.transactionAmountLimitPerDay || '-' %></p>
+                                  <p class="card-text"><b>Transaction Count / Day Limit:</b> <%= account.transactionCountLimitPerDay || '-' %></p>
+                                  <p class="card-text"><b>Transaction Amount / Transaction Limit:</b> <%= account.transactionAmountLimitPerTransaction || '-' %></p>
+                      
+                            </div>
+                            <% }) %>
+                          </div>
+                    </div>
+                </div>
+            </div>
 
- 
-  
-<div class="card-body card-body-cascade text-center">
-
-    <!-- Title -->
-    <h1 class="card-title" style="font-size: larger;"><strong>Account Details:</strong></h1>
-    <!-- Subtitle -->
-    
-    <!-- Text -->
-    <div class="container" style="border: 2px solid black;">
-      <div class="card" style="width:auto; height:auto;">
-        <div class="row">
-          <div class="col-sm-6">
-            <img style="height:150px; width:150px;" class="card-img" src="https://www.pngmart.com/files/22/User-Avatar-Profile-PNG-Isolated-Clipart.png" alt="Card image" />
-            <% accounts.forEach(function(account) { %>
-    
-              <h5 class="card-title" style="font-weight: bold;">Customer ID: <%= account.customer_id || '-' %></h5>
-              <p class="card-text"><b>Bank:</b> <%= account.bank || '-' %></p>
-              <p class="card-text"><b>Status:</b> <%= account.status || '-' %></p>
-              <p class="card-text"><b>Account Number:</b> <%= account.accountNumber || '-' %></p>
-              <p class="card-text"><b>IFSC Code:</b> <%= account.ifscCode || '-' %></p>
-              <p class="card-text"><b>Currency:</b> <%= account.currency || '-' %></p>
-                <p class="card-text"><b>Allowed Methods:</b>
-                 <% for (var i = 0; i < account.allowedMethods.length; i++) {%>
-                   <%= account.allowedMethods[i] %>
-                    <% } %>
-                
-                
-                </p>
-                
-                <p class="card-text"><b>Transaction Limit: </b><%= account.transactionLimit || '-' %></p>
-             
-              <% }); %>
            
-          </div>
-          <div class="col-sm-6" style="text-align: left;">
-            <% accounts.forEach(function(account) { %>
-    
-              <div class="card-body">
-                <p class="card-text"><b>Minimum Balance:</b> <%= account.minimumBalance || '-' %></p>
 
-                   <p class="card-text"><b>UPI ID:</b> <%= account.upiId || '-' %></p>
-                   <b>UPI QR Code: </b></p>
-                <div class="container1">
-                  <input type="hidden" name="qrText2" id="qrText2" value="<%= accounts[0].upiQrCode || '' %>">
-                  <div id="imgBox">
-                    <img src="" id="qrImage">
-                  </div>
-                  <button style="border:none;background: none;color:blue;text-decoration: underline;" class="btn btn-primary" onclick="showQR()">Generate QR</button>
-                
+           
+        </div>
+
+       
+
+                <!-- Tab panes -->
+               
+                  
+                   
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title mb-3">Bank Details</h5>
+
+                <% accounts.forEach(function(account) { %>
+                  <h5 class="card-title" style="font-weight: bold;">Customer ID: <%= account.customer_id || '-' %></h5>
+                  <p class="card-text"><b>Bank:</b> <%= account.bank || '-' %></p>
+                  <p class="card-text"><b>Status:</b> <%= account.status || '-' %></p>
+                  <p class="card-text"><b>Account Number:</b> <%= account.accountNumber || '-' %></p>
+                  <p class="card-text"><b>IFSC Code:</b> <%= account.ifscCode || '-' %></p>
+                  <p class="card-text"><b>Currency:</b> <%= account.currency || '-' %></p>
 
                 </div>
-                
-                <div class="col-sm-6 col-md-4 col-xl-3" id="qrcode">
-                  <div class="my-4 text-center">
-                      <!-- Small modal -->
-                      <!-- <button type="button" class="btn btn-primary waves-effect waves-light"
-                          data-bs-toggle="modal" data-bs-target=".bs-example-modal-sm">Show QR Code</button> -->
-                  </div>
-              
-                  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
-                      aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-sm">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <h5 class="modal-title mt-0" id="mySmallModalLabel">QR Code</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                      aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body">
-                                  <p>Scan the QR code below:</p>
-                                  <img src="" id="qrImage" alt="QR Code" style="max-width: 100%;">
-              
-                                  <!-- Hidden text field to store the QR code data -->
-                                  <input type="hidden" id="hiddenQRCodeData" value="<%= accounts[0].upiQrCode || '' %>">
-                              </div>
-                          </div>
-                          <!-- /.modal-content -->
-                      </div>
-                      <!-- /.modal-dialog -->
-                  </div>
-                  <!-- /.modal -->
-              </div>
-                <p class="card-text"><b>Transaction ID:</b> <%= account.decentroTxnId || '-' %></p>
-                <p class="card-text"><b>UPI Onboarding Status:</b> <%= account.upiOnboardingStatus || '-' %></p>
-                <p class="card-text"><b>Merchant Category Code: </b><%= account.merchantCategoryCode || '-' %></p>
-                <p class="card-text"><b>Transaction Amount / Day Limit:</b> <%= account.transactionAmountLimitPerDay || '-' %></p>
-                <p class="card-text"><b>Transaction Count / Day Limit:</b> <%= account.transactionCountLimitPerDay || '-' %></p>
-                <p class="card-text"><b>Transaction Amount / Transaction Limit:</b> <%= account.transactionAmountLimitPerTransaction || '-' %></p>
-    
-                <p class="card-text" ><b>Account Type:</b> <%= account.account_type || '-' %></p>
-                <p class="card-text"><b>Customer ID:</b> <%= account.customer_id || '-' %></p>
-                <p class="card-text"><b>PAN No:</b> <%= account.pan_number || '-' %></p>
-                <p class="card-text"><b>Mobile No:</b> <%= account.mobile_no || '-' %></p>
-    
-              </div>
-    
-            <% }); %>
-          </div>
+                <% }) %>
+               
+            </div>
         </div>
-      </div>
     </div>
-    
-    
-
-    <!-- Facebook -->
-    
-
 </div>
-<div id="myModal" class="modal">
-  <div class="modal-content">
-      <span class="close">&times;</span>
-      <div id="modal-body">
-          <img src="" id="qrImage" alt="QR Code">
-      </div>
-  </div>
-</div>
-
-
-
-  <!-- Pagination -->
- 
-<script>
-  
-  let imgBox = document.getElementById("imgBox")
-        let qrImage = document.getElementById("qrImage")
-        let qrText2 = document.getElementById("qrText2")
-
-        function showQR(){
-         if(qrText2.value.length > 0){
-          qrImage.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+qrText2.value;
-          imgBox.classList.add("show-img")
-         }
-         else{
-          qrText2.classList.add("error")
-          setTimeout(()=>{
-            qrText2.classList.remove("error")
-          },1000)
-         }
-        }
-</script>
-
-  
-
-  
+<!-- end row -->
 
 <%- contentFor('FooterJs') %>
 
-<!--tinymce js-->
-<script src="public/assets/libs/tinymce/tinymce.min.js"></script>
+<!-- apexcharts -->
+<script src="public/assets/libs/apexcharts/apexcharts.min.js"></script>
 
-<!-- email editor init -->
-<script src="public/assets/js/pages/email-editor.init.js"></script>
+<script src="public/assets/js/pages/profile.init.js"></script>
 
 <%- contentFor('BottomJs') %>
-</body>
-</html>

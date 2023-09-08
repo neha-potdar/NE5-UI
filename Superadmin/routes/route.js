@@ -830,6 +830,14 @@ app.get('/search', async (req, res) => {
             res.locals = { title: 'Form Repeater' };
             res.render('Form/form-repeater');
       });
+      app.get('/generate-link',  function (req, res) {
+            res.locals = { title: 'Generate Payment Link' };
+            res.render('./UserInfo/Generate Payment Link');
+      });
+      app.get('/add-beneficiary',  function (req, res) {
+            res.locals = { title: 'Add Beneficiary' };
+            res.render('./UserInfo/Add Beneficiary');
+      });
       app.get('/form-wizard', isUserAllowed, function (req, res) {
             res.locals = { title: 'Form Wizard' };
             res.render('Form/form-wizard');
@@ -838,6 +846,91 @@ app.get('/search', async (req, res) => {
             res.locals = { title: 'Form Mask' };
             res.render('Form/form-mask');
       });
+      app.get('/history', function (req, res) {
+            res.locals = { title: 'Credit History' };
+            res.render('./UserInfo/History');
+      });
+      app.get('/manage-beneficiary', function (req, res) {
+            res.locals = { title: 'Manage Beneficiary' };
+            res.render('./UserInfo/Manage Beneficiery');
+      });
+      app.get('/photocopy', function (req, res) {
+            res.locals = { title: 'Photocopy Check' };
+            res.render('./UserInfo/Photocopy');
+      });
+      app.get('/aadhar', function (req, res) {
+            res.locals = { title: 'Aadhar Mask' };
+            res.render('./UserInfo/Aadhar Mask');
+      });
+      app.get('/video-live', function (req, res) {
+            res.locals = { title: 'Video Live' };
+            res.render('./UserInfo/Video Live');
+      });
+      app.get('/digi', function (req, res) {
+            res.locals = { title: 'Digilocker' };
+            res.render('./UserInfo/Digilocker');
+      });
+      app.get('/data-pull', function (req, res) {
+            res.locals = { title: 'Data Pull' };
+            res.render('./UserInfo/Data Pull');
+      });
+      app.get('/credits', function (req, res) {
+            res.locals = { title: 'Available Credits' };
+            res.render('./UserInfo/Available Credits');
+      });
+      app.get('/credit-report', function (req, res) {
+            res.locals = { title: 'Credit Report' };
+            res.render('./UserInfo/Credit Report');
+      });
+      app.get('/report', function (req, res) {
+            res.locals = { title: 'Generate Report' };
+            res.render('./UserInfo/Generate Report');
+      });
+      app.get('/callback', function (req, res) {
+            res.locals = { title: 'Callbacks' };
+            res.render('./UserInfo/Callbacks');
+      });
+      app.get('/credit-cards', function (req, res) {
+            res.locals = { title: 'Credit Cards' };
+            res.render('./UserInfo/Credit Cards');
+      });
+      app.get('/wallets', function (req, res) {
+            res.locals = { title: 'Issued Wallets' };
+            res.render('./UserInfo/Issued Wallets');
+      });
+      app.get('/emandate', function (req, res) {
+            res.locals = { title: 'E Mandate' };
+            res.render('./UserInfo/eMandate');
+      });
+      app.get('/validate', function (req, res) {
+            res.locals = { title: 'Validate' };
+            res.render('./UserInfo/Validate');
+      });
+      app.get('/collection', function (req, res) {
+            res.locals = { title: 'Collection Request' };
+            res.render('./UserInfo/Collection Request');
+      });
+      app.get('/credit', function (req, res) {
+            res.locals = { title: 'Credit History' };
+            res.render('./UserInfo/Credit');
+      });
+      app.get('/send-collection', function (req, res) {
+            res.locals = { title: 'Collection' };
+            res.render('./UserInfo/Collection');
+      });
+      app.get('/payouts', function (req, res) {
+            res.locals = { title: 'Payouts' };
+            res.render('./UserInfo/Payout');
+      });
+      app.get('/analytics', function (req, res) {
+            res.locals = { title: 'Analytics' };
+            res.render('./Dashboard/index');
+      });
+      app.get('/payment-link', function (req, res) {
+            res.locals = { title: 'Payment Link' };
+            res.render('./UserInfo/Payment Links');
+      });
+    
      
       // Tables
       app.get('/tables-basic', isUserAllowed, function (req, res) {

@@ -280,14 +280,14 @@ File: Flot chart
           var desktops = [[0, 50], [1, 130], [2, 80], [3, 70], [4, 180], [5, 105], [6, 250]];
           var laptops = [[0, 80], [1, 100], [2,60], [3, 120], [4, 140], [5, 100], [6, 105]];
           var tablets = [[0, 20], [1, 80], [2, 70], [3, 140], [4, 250], [5, 80], [6, 200]];
-          var plabels = ["Desktops","Laptops","Tablets"];
+          var plabels = ["Income","Expenses","Transactions"];
           var pcolors = ['#eeb902', '#45cb85', '#3b5de7'];
           var borderColor = 'rgba(166, 176, 207, 0.1)';
           var bgColor = 'transparent';
           this.createPlotGraph("#website-stats", desktops, laptops, tablets, plabels, pcolors, borderColor, bgColor);
 
           //Pie graph data
-          var pielabels = ["Desktops","Laptops","Tablets"];
+          var pielabels = ["Income","Expenses","Transactions"];
           var datas = [20,30, 15];
           var colors = ['#3b5de7','#45cb85', "#ebeff2"];
           this.createPieGraph("#pie-chart #pie-chart-container", pielabels , datas, colors);

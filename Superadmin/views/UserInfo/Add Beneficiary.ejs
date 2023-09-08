@@ -1,0 +1,167 @@
+<%- contentFor('HeaderCss') %>
+
+<%- contentFor('breadcrumb') %>
+
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <h4 class="page-title mb-0 font-size-18">Add Beneficiary</h4>
+
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Accounts & Payments</a></li>
+                    <li class="breadcrumb-item active">Add Beneficiary</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+
+<%- contentFor('body') %>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+               
+                
+
+                <form id="form-horizontal" class="form-horizontal form-wizard-wrapper">
+                    <h4 class="card-title">Add Beneficiary</h4>
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtFirstNameBilling"
+                                        class="col-lg-3 col-form-label">Beneficiary Provider</label>
+                                        <div class="col-lg-9">
+                                            <select id="ddlCreditCardType" name="ddlCreditCardType"
+                                                class="form-select">
+                                                <option value="">--Please Select Bank--</option>
+                                                <option value="AE">SBI</option>
+                                                <option value="VI">Kotak</option>
+                                                <option value="MC">CBI</option>
+                                                <option value="DI">Maharashtra Bank</option>
+                                            </select>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtLastNameBilling"
+                                        class="col-lg-3 col-form-label">Name</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtLastNameBilling" name="txtLastNameBilling"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtCompanyBilling"
+                                        class="col-lg-3 col-form-label">Email</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtCompanyBilling" name="txtCompanyBilling"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtEmailAddressBilling"
+                                        class="col-lg-3 col-form-label">Mobile No</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtEmailAddressBilling" name="txtEmailAddressBilling"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtTelephoneBilling"
+                                        class="col-lg-3 col-form-label">IFSC</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtTelephoneBilling" name="txtTelephoneBilling"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtFirstNameBilling"
+                                        class="col-lg-3 col-form-label">Transfer Type</label>
+                                        <div class="col-lg-9">
+                                            <select id="ddlCreditCardType" name="ddlCreditCardType"
+                                                class="form-select">
+                                                <option value="">--Please Select--</option>
+                                                <option value="AE">NEFT</option>
+                                                <option value="VI">RTGS</option>
+                                                <option value="MC">IMPS</option>
+                                                <option value="DI">UPI</option>
+                                            </select>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtTelephoneBilling"
+                                        class="col-lg-3 col-form-label">Account No</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtTelephoneBilling" name="txtTelephoneBilling"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtTelephoneBilling"
+                                        class="col-lg-3 col-form-label">Sender's Account No</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtTelephoneBilling" name="txtTelephoneBilling"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3 row">
+                                    <label for="txtTelephoneBilling"
+                                        class="col-lg-3 col-form-label">Sender's Mobile No</label>
+                                    <div class="col-lg-9">
+                                        <input id="txtTelephoneBilling" name="txtTelephoneBilling"
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <button type="submit" class="btn btn-outline-primary" style="width: 190px; border-radius:20px; float: right;">Add Beneficiary</button>
+                           
+                            
+                            <br><br><br>
+                            
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+<%- contentFor('FooterJs') %>
+
+<!-- form wizard -->
+<script src="public/assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
+<!-- form wizard init -->
+<script src="public/assets/js/pages/form-wizard.init.js"></script>
+
+<%- contentFor('BottomJs') %>

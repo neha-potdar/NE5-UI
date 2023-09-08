@@ -1,5 +1,40 @@
 <html>
   <head>
+    <style>
+       table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow:initial;
+    }
+    
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    @media (max-width: 768px) {
+      table {
+        width: 100%;
+      }
+
+      th, td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+    </style>
     
   </head>
   <body>
@@ -13,12 +48,12 @@
 <div class="row">
     <div class="col-12">
         <div class="page-title-box d-flex align-items-center justify-content-between">
-            <h4 class="page-title mb-0 font-size-18">Inbox</h4>
+            <h4 class="page-title mb-0 font-size-18">All Transactions</h4>
 
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">Email</a></li>
-                    <li class="breadcrumb-item active">Inbox</li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Accounts & Payments</a></li>
+                    <li class="breadcrumb-item active">All Transactions</li>
                 </ol>
             </div>
 
@@ -119,30 +154,30 @@
     </script>
 
     <div class="table-responsive">
-      <table class="table table-centered mb-0">
+      <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">Transaction id</th>
-            <th scope="col">Price</th>
-            <th scope="col">Type</th>
-            <th scope="col">Credit/Debit</th>
-            <th scope="col" colspan="2">Narration</th>
-            <th scope="col">Account Type</th>
-            <th scope="col">Time</th>
-            <th scope="col">Api Name</th>
+            <th scope="col" style="width: 12.5%;">Transaction ID</th>
+            <th scope="col" style="width: 12.5%;">Price</th>
+            <th scope="col" style="width: 12.5%;">Type</th>
+            <th scope="col" style="width: 12.5%;">Credit/Debit</th>
+            <th scope="col" colspan="2" style="width: 12.5%;">Narration</th>
+            <th scope="col" style="width: 12.5%;">Account Type</th>
+            <th scope="col" style="width: 12.5%;">Time</th>
+            <th scope="col" style="width: 12.5%;">Api Name</th>
           </tr>
         </thead>
         <tbody>
           <% transactions.forEach((item) => { %>
-            <tr>
-              <td><%= item.transaction_id %></td>
-              <td>$ <%= item.price %></td>
-              <td><%= item.type %></td>
-              <td><%= item.credit_debit %></td>
-              <td colspan="2"><%= item.narration %></td>
-              <td><%= item.account_type %></td>
-              <td><%= item.transaction_time %></td>
-              <td><%= item.api_name %></td>
+            <tr style="max-height: min-content;">
+              <td class="text-truncate"><%= item.transaction_id %></td>
+              <td  class="text-truncate">$ <%= item.price %></td>
+              <td  class="text-truncate"><%= item.type %></td>
+              <td  class="text-truncate"><%= item.credit_debit %></td>
+              <td colspan="2" class="text-truncate"><%= item.narration %></td>
+              <td  class="text-truncate"><%= item.account_type %></td>
+              <td  class="text-truncate"><%= item.transaction_time %></td>
+              <td  class="text-truncate"><%= item.api_name %></td>
             </tr>
           <% }); %>
         </tbody>
